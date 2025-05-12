@@ -1,6 +1,6 @@
 public int walkDogs(int hour) {
 int numDogs = company.numAvailableDogs(hour);
-  if(numDogs>maxDogs) {
+  if(numDogs >= maxDogs) {
   company.updateDog(hour, numDogs);
     return numDogs;
   }
