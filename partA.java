@@ -1,8 +1,9 @@
 public int walkDogs(int hour) {
-int numDogs = numAvailableDogs(hour);
-  if(numDogs>=maxDogs) {
-  numDogs = maxDogs;
+int numDogs = company.numAvailableDogs(hour);
+  if(numDogs>maxDogs) {
+  company.updateDog(hour, numDogs);
+    return numDogs;
   }
-  this.updateDogs(hour, numDogs);
-return numDogs;
+  company.updateDog(hour, maxDogs);
+return maxDogs;
 }
