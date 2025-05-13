@@ -16,13 +16,10 @@ public class SignedText {
 
     public String addSignature(String text) {
         String signature = getSignature();
-        
-        if (text.endsWith(signature)) {
-            return text; 
-        }
-        
-        if (text.startsWith(signature)) {
-            return text.substring(signature.length()) + signature; 
+        int index = text.indexOf(signature);
+
+        if (index != -1) {
+            return text.substring(0, index) + text.substring(index + signature.length()) + signature;
         }
         
         return text + signature; 
