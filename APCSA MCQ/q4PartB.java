@@ -1,7 +1,12 @@
 public boolean clearPair(int row, int col) {
     int target = puzzle[row][col];
     for (int r = row; r < puzzle.length; r++) {
-        int startCol = (r == row) ? col + 1 : 0;
+        int startCol;
+        if (r == row) {
+            startCol = col + 1;
+        } else {
+            startCol = 0;
+        }
         for (int c = startCol; c < puzzle[0].length; c++) {
             int val = puzzle[r][c];
             if (val != 0 && (val == target || val + target == 10)) {
